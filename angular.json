@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "CRM": {
+    "simplecrm": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -57,7 +57,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -66,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "CRM:build:production"
+              "buildTarget": "simplecrm:build:production"
             },
             "development": {
-              "buildTarget": "CRM:build:development"
+              "buildTarget": "simplecrm:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "CRM:build"
+            "buildTarget": "simplecrm:build"
           }
         },
         "test": {
@@ -99,6 +105,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "simplecrm:build:production",
+              "serveTarget": "simplecrm:serve:production"
+            },
+            "development": {
+              "buildTarget": "simplecrm:build:development",
+              "serveTarget": "simplecrm:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

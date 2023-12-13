@@ -1,0 +1,64 @@
+.mat-drawer-container{
+    height: 100vh;
+}
+
+.sidenav{
+    width: 300px;
+}
+
+.logoContainer{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.356);
+    padding: 0 16px;
+    font-size: 24px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.menuItems{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li{
+        padding: 8px 16px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        font-size: 24px;
+
+        mat-icon{
+            width: 24px; 
+            height: auto;
+        }
+
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.075);
+        }
+    }
+}
+
+.menu-icon{
+    cursor: pointer;
+}
+
+mat-toolbar{
+    height: 56px;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+}
+
+.routerContainer{
+    padding: 16px 56px 0 56px;
+}
+
+.addBtn{
+    position: absolute;
+    bottom: 56px;
+    right: 56px;
+}
