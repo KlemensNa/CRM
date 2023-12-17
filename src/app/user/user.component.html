@@ -6,17 +6,13 @@
       <th>City</th>
     </tr>
 
-    <tr>
-      <td>Klemens</td>
-      <td>klemensnia</td>
-      <td>Leipzisch</td>
+    <tr *ngFor="let user of userList" [routerLink]="[user.id]" >
+      <td>{{user.firstname}} {{user.lastname}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.city}}</td>
     </tr>
 
-    <tr>
-      <td>Tini</td>
-      <td>tibmensnia</td>
-      <td>Leipzisch</td>
-    </tr>
+    
 
   </table>
 </mat-card>

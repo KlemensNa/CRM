@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
-import { Firestore, query, getFirestore, collection, doc, onSnapshot} from '@angular/fire/firestore';
+import { Firestore, query, getFirestore, collection, doc, onSnapshot, limit, updateDoc } from '@angular/fire/firestore';
+import { User } from '../models/user.class';
 
 
 
@@ -14,27 +15,27 @@ export class UserComponent {
 
   firestore: Firestore = inject(Firestore);
   unsub;
+  userList: User[] = [];
 
 
-  constructor(public dialog: MatDialog){
-    this.unsub = onSnapshot(doc(this.getUserRef()), (doc:any) => {    
-      // console.warn(this.firestore)
-      // console.error("Current data: ", doc)
-      
-      
+  constructor(public dialog: MatDialog) {
+    
+    
+    const q = query(this.getUserRef(), limit(50))
+    this.unsub = onSnapshot(q, (doc) => {
+      this.userList = [];      
       doc.forEach((element: any) => {
-        console.error("Current data: ", element)
+        this.userList.push({...element.data(), id: element.id}) //add id to JSON
       });
-
-      });
+    });
 
   }
 
-  openDialog(){ 
-   this.dialog.open(DialogComponent)
+  openDialog() {
+    this.dialog.open(DialogComponent)
   }
 
-  getUserRef(){
+  getUserRef() {
     return collection(this.firestore, 'users')
   }
 }

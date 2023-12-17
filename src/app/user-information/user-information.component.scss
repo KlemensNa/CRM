@@ -1,0 +1,64 @@
+.userProfilHeader{
+    position: relative;
+    background-color: #681acf;
+    min-height: 250px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .userProfilHeaderInfos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+
+        .userProfilHeaderInfosName{
+            font-size: 48px;
+        }
+
+        .userProfilHeaderInfosEmail{
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.658);
+        }
+    }
+
+    img{
+        position: absolute;
+        object-fit: cover;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(50%);
+        background-color: #681acf;
+        border-radius: 100%;
+        width: 150px;
+        height: 150px;
+        z-index: 2;
+    }
+}
+
+
+.userProfilInfocard{
+    position: relative;
+    min-height: 400px;
+    background-color: white;
+    color: black;
+    // padding-top: 16px;
+
+    mat-card-content{
+        display: flex;
+        flex-direction: column;        
+    }
+
+    
+}
+
+.buttonEdit{
+    position: absolute;
+    right: 8px;
+    top: 16px;
+
+    &:hover{
+        background-color: #691acf31
+    }
+}
