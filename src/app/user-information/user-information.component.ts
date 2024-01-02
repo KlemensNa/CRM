@@ -23,8 +23,7 @@ export class UserInformationComponent {
     
 
     ngOnInit(): void {
-      this.id = this.route.snapshot.paramMap.get('id')
-      console.log(this.id)
+      this.id = this.route.snapshot.paramMap.get('id');
       this.getUser()
     }
 

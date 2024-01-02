@@ -1,0 +1,37 @@
+<mat-card>
+    <table class="userTable">
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Department</th>
+            <th>Status</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+
+        <tr *ngFor="let employee of employeesList">
+            <td>{{employee.image}} {{employee.name}}</td>
+            <td>{{employee.position}}</td>
+            <td>{{employee.department}}</td>
+            <td>{{employee.status}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{employee.email}}</td>
+            <td>
+                <button mat-icon-button class="buttonEdit" [matMenuTriggerFor]="menuTwo">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menuTwo="matMenu">
+                    <button mat-menu-item [routerLink]="employee.id">Edit Employee</button>
+                    <button mat-menu-item >Delete Employee</button>
+                </mat-menu>
+            </td>
+        </tr>
+    </table>
+</mat-card>
+
+<div class="addBtn" (click)="openDialog()">
+    <button mat-fab color="primary" matTooltip="add User">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>

@@ -2,3 +2,15 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.fullScreen{
+    width: 100vw;
+    height: 100vh;
+}
+
+.d-flex-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0 !important;
+}

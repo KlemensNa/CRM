@@ -1,0 +1,23 @@
+<div class="signInContainer fullScreen">
+    <h1 mat-dialog-title>Add User</h1>
+    <div mat-dialog-content>
+        <div class="dialog-content">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input [(ngModel)]="admin.email" matInput required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Login Name</mat-label>
+                <input matInput [(ngModel)]="admin.nickname" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input [(ngModel)]="admin.password" matInput required>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="btns">
+        <button mat-raised-button color="primary" routerLink="/public">Cancel</button>
+        <button mat-raised-button color="primary" (click)="save()" routerLink="/login">Save</button>
+    </div>
+</div>

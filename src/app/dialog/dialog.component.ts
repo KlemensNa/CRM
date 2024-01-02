@@ -34,9 +34,7 @@ export class DialogComponent {
 
   getUserRef(){
     return collection(this.firestore, 'users')
-  }
-
-  
+  }  
 
 }
 

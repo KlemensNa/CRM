@@ -11,35 +11,44 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatMenuModule} from '@angular/material/menu';
-
 import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserComponent } from './user/user.component';
-import { DialogComponent } from './dialog/dialog.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatNativeDateModule } from '@angular/material/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { UserInformationComponent } from './user-information/user-information.component';
-import { DialogEditAdressComponent } from './dialog-edit-adress/dialog-edit-adress.component';
-import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { AdminModule } from './admin/admin.module';
+import { AdminComponent } from './admin/admin.component';
+import { PublicComponent } from './public/public.component';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { LoginComponent } from './login/login.component';
+import { SigninComponent } from './signin/signin.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { EmployeesAddDialogComponent } from './employees-add-dialog/employees-add-dialog.component';
+import { EmployeesInformationComponent } from './employees-information/employees-information.component';
+import { EmployeesEditDialogComponent } from './employees-edit-dialog/employees-edit-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    DialogComponent,
-    DashboardComponent,
-    UserInformationComponent,
-    DialogEditAdressComponent,
-    DialogEditUserComponent
+    AdminComponent, 
+    PublicComponent,
+    LoginComponent,
+    SigninComponent,
+    EmployeesComponent,
+    EmployeesAddDialogComponent,
+    EmployeesInformationComponent,
+    EmployeesEditDialogComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -52,11 +61,15 @@ import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.com
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule, 
-    FormsModule, 
+    FormsModule,
+    ReactiveFormsModule,
     MatTableModule,
     MatCardModule,
     MatProgressBarModule,
     MatMenuModule,
+    MatSelectModule,
+    RouterModule,
+    AdminModule,
     provideFirebaseApp(() => initializeApp({"projectId":"simplecrm-142f9","appId":"1:405970796618:web:956b444e44f92dbe49e6b3","storageBucket":"simplecrm-142f9.appspot.com","apiKey":"AIzaSyA4hJeo0hqP5T1Wjj9h0r1iDiIyPwmrAvQ","authDomain":"simplecrm-142f9.firebaseapp.com","messagingSenderId":"405970796618"})),
     provideFirestore(() => getFirestore())
   ],

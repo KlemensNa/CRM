@@ -1,0 +1,56 @@
+<mat-progress-bar *ngIf="loading" mode="query"></mat-progress-bar>
+<h1 mat-dialog-title>Edit Employee</h1>
+<div mat-dialog-content>
+    <div class="dialog-content">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input [disabled]="loading" [(ngModel)]="employee.name" matInput required>
+        </mat-form-field>
+    </div>
+
+    <div class="dialog-content">
+        <div class="dialog-content d-flex-column">
+            <h4>Position</h4>
+            <mat-form-field>
+                <mat-label>Position</mat-label>
+                <mat-select [(ngModel)]="selectedPosition" (ngModelChange)="selectPosition($event)">
+                    @for (position of positions; track position) {
+                    <mat-option [value]="position">{{position}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="dialog-content d-flex-column">
+            <h4>Department</h4>
+            <mat-form-field>
+                <mat-label>Department</mat-label>
+                <mat-select [(ngModel)]="selectedDep" (ngModelChange)="selectDepartment($event)">
+                    @for (department of departments; track department) {
+                    <mat-option [value]="department">{{department}}</mat-option>
+                    }
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    
+
+    <div class="dialog-content">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input [disabled]="loading" [(ngModel)]="employee.email" matInput required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input [disabled]="loading" matInput [(ngModel)]="employee.phone" required>
+        </mat-form-field>
+    </div>
+
+
+
+
+</div>
+<div mat-dialog-actions>
+    <button [disabled]="loading" mat-button [mat-dialog-close]="">Cancel</button>
+    <button [disabled]="loading" mat-button (click)="updateEmployee()" cdkFocusInitial>Save</button>
+</div>

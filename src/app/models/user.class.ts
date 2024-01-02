@@ -37,9 +37,7 @@ export class User{
             no: this.no,
             id: this.id
         }
-    }
-
-    
+    }    
 }
 
 

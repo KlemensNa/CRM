@@ -18,8 +18,7 @@ export class UserComponent {
   userList: User[] = [];
 
 
-  constructor(public dialog: MatDialog) {
-    
+  constructor(public dialog: MatDialog) {    
     
     const q = query(this.getUserRef(), limit(50))
     this.unsub = onSnapshot(q, (doc) => {
