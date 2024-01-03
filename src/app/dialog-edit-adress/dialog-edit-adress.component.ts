@@ -18,6 +18,10 @@ export class DialogEditAdressComponent {
 
   }
 
+  ngOnInit(){
+    console.warn("yeaf",this.user)
+  }
+
   async update(){
     this.loading = true;
     await updateDoc(this.getUser(), this.user.toJSON())

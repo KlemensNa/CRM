@@ -31,19 +31,18 @@ export class EmployeesComponent {
       });
 
     });
-
   }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')
-    this.getUser()
+    // this.getUser()
   }
 
-  async getUser() {
-    const docRef = doc(this.getUserRef(), this.id);
-    const docSnap = await getDoc(docRef);
-    this.employee = new Employees(docSnap.data())
-  }
+  // async getUser() {
+  //   const docRef = doc(this.getUserRef(), this.id);      braucht man hier nicht, da alle geladen werden
+  //   const docSnap = await getDoc(docRef);
+  //   this.employee = new Employees(docSnap.data())
+  // }
 
 
   getUserRef() {

@@ -13,7 +13,7 @@
             <h4>Position</h4>
             <mat-form-field>
                 <mat-label>Position</mat-label>
-                <mat-select [(ngModel)]="selectedPosition" (ngModelChange)="selectPosition($event)">
+                <mat-select [(ngModel)]="employee.position" (ngModelChange)="selectPosition($event)">
                     @for (position of positions; track position) {
                     <mat-option [value]="position">{{position}}</mat-option>
                     }
@@ -25,15 +25,14 @@
             <h4>Department</h4>
             <mat-form-field>
                 <mat-label>Department</mat-label>
-                <mat-select [(ngModel)]="selectedDep" (ngModelChange)="selectDepartment($event)">
+                <mat-select [(ngModel)]="employee.department" (ngModelChange)="selectDepartment($event)">
                     @for (department of departments; track department) {
                     <mat-option [value]="department">{{department}}</mat-option>
                     }
                 </mat-select>
             </mat-form-field>
         </div>
-    </div>
-    
+    </div>   
 
     <div class="dialog-content">
         <mat-form-field appearance="outline">
@@ -45,9 +44,6 @@
             <input [disabled]="loading" matInput [(ngModel)]="employee.phone" required>
         </mat-form-field>
     </div>
-
-
-
 
 </div>
 <div mat-dialog-actions>

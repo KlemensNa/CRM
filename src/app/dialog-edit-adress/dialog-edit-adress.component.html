@@ -27,6 +27,6 @@
 
 </div>
 <div mat-dialog-actions>
-    <button [disabled] = "loading" mat-button [mat-dialog-close]="">Cancel</button>
+    <button [disabled] = "loading" mat-button (click)="closeDialog()">Cancel</button>
     <button [disabled] = "loading" mat-button (click)="update()" [mat-dialog-close]="" cdkFocusInitial>Save</button>
 </div>

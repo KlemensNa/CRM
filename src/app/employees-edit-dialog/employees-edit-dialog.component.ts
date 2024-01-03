@@ -20,7 +20,6 @@ export class EmployeesEditDialogComponent {
   selectedPosition?: string;
   selectedDep?: string;
 
-
   firestore: Firestore = inject(Firestore);
   
 
@@ -28,12 +27,14 @@ export class EmployeesEditDialogComponent {
 
   
   ngOnInit(){
-    console.warn(this.employee)
+    console.warn("yeaf", this.employee)
   }
+
 
   selectPosition(position: any){
     this.employee.position = position 
   }
+
 
   selectDepartment(dep: any){
     this.employee.department = dep;  
@@ -50,6 +51,7 @@ export class EmployeesEditDialogComponent {
         location.reload()
       })
   }
+
 
   getEmployee(){
     return doc(collection(this.firestore, 'employees'), this.employee.id)

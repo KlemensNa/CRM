@@ -16,7 +16,6 @@ const routes: Routes =
       {path: "user/:id", component: UserInformationComponent},
       {path: "employees", component: EmployeesComponent},
       {path: "employees/:id", component: EmployeesInformationComponent},
-
     ]},
     
   ];
