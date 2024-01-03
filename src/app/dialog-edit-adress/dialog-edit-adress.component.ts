@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { User } from '../models/user.class';
 import { Firestore, collection, doc, updateDoc } from '@angular/fire/firestore';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dialog-edit-adress',
@@ -13,7 +14,7 @@ export class DialogEditAdressComponent {
   loading: boolean = false;
   firestore: Firestore = inject(Firestore)
 
-  constructor(private dialogRef: MatDialogRef<DialogEditAdressComponent>){
+  constructor(private dialogRef: MatDialogRef<DialogEditAdressComponent>, private router: Router){
 
   }
 
@@ -29,6 +30,11 @@ export class DialogEditAdressComponent {
 
   getUser(){
     return doc(collection(this.firestore, 'users'), this.user.id)
+  }
+
+  closeDialog(){
+    this.dialogRef.close();
+    this.router.navigateByUrl('employees')
   }
 
 }

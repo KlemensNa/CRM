@@ -11,9 +11,14 @@ export class AuthService {
   firestore: Firestore = inject(Firestore)
   session: any;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    let session: any = localStorage.getItem('session');
+    if(session){
+      session = JSON.parse(session)
+    }
 
-
+    this.session =  session;
+  }
 
   async getAll(){
 
