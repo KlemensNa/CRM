@@ -14,6 +14,7 @@ export class DialogEditUserComponent {
   loading: boolean = false;
   birthDate: Date;
   firestore: Firestore = inject(Firestore);
+  
 
   constructor(private dialogRef: MatDialogRef<DialogEditUserComponent>){}
 

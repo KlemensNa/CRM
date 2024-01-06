@@ -7,10 +7,13 @@
       <th></th>
     </tr>
 
-    <tr *ngFor="let user of userList" [routerLink]="[user.id]" >
-      <td>{{user.firstname}} {{user.lastname}}</td>
-      <td>{{user.email}}</td>
-      <td>{{user.city}}</td>
+    <tr *ngFor="let user of userList"  >
+      <td [routerLink]="[user.id]">{{user.firstname}} {{user.lastname}}</td>
+      <td [routerLink]="[user.id]">{{user.email}}</td>
+      <td [routerLink]="[user.id]">{{user.city}}</td>
+      <td (click)="deleteCustomer(user.id)">
+        <mat-icon>delete</mat-icon>
+      </td>
     </tr>
 
     

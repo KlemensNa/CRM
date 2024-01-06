@@ -22,8 +22,8 @@
                     <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menuTwo="matMenu">
-                    <button mat-menu-item [routerLink]="employee.id">Edit Employee</button>
-                    <button mat-menu-item >Delete Employee</button>
+                    <button mat-menu-item (click)="editEmployee(employee.id)">Edit Employee</button>
+                    <button mat-menu-item (click)="deleteEmployee(employee.id)">Delete Employee</button>
                 </mat-menu>
             </td>
         </tr>

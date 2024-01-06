@@ -27,7 +27,7 @@ export class EmployeesEditDialogComponent {
 
   
   ngOnInit(){
-    console.warn("yeaf", this.employee)
+    console.warn("yeaf", this.employee.status);
   }
 
 
@@ -48,7 +48,6 @@ export class EmployeesEditDialogComponent {
       .then(() => {
         this.loading = false;
         this.dialogRef.close();
-        location.reload()
       })
   }
 

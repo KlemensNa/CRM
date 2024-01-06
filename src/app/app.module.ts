@@ -32,6 +32,8 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeesAddDialogComponent } from './employees-add-dialog/employees-add-dialog.component';
 import { EmployeesInformationComponent } from './employees-information/employees-information.component';
 import { EmployeesEditDialogComponent } from './employees-edit-dialog/employees-edit-dialog.component';
+import { EmployeeDeleteComponentComponent } from './employee-delete-component/employee-delete-component.component';
+import { DialogDeleteUserComponent } from './dialog-delete-user/dialog-delete-user.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { EmployeesEditDialogComponent } from './employees-edit-dialog/employees-
     EmployeesComponent,
     EmployeesAddDialogComponent,
     EmployeesInformationComponent,
-    EmployeesEditDialogComponent
+    EmployeesEditDialogComponent,
+    EmployeeDeleteComponentComponent,
+    DialogDeleteUserComponent
   ],
   imports: [
     BrowserModule,

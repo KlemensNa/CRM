@@ -35,10 +35,31 @@
             &:first-child {
                 padding-left: 16px;
             }
+
+            &:last-child {
+                visibility: hidden;        
+            }
         }
 
         &:hover{
             background-color: rgba(255, 255, 255, 0.1);
+
+            td{
+                &:last-child {
+                    visibility: visible;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                   
+
+                    &:hover{
+                        background-color: rgba(255, 255, 255, 0.2);
+                        border-radius:95%;
+                        box-shadow: rgb(255, 255, 255, 1.3);
+                    }
+                }
+            }
+            
         }
     }
 
